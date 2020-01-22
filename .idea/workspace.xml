@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e62c75d-2fc8-4931-90a9-85dd5df199f6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WlAo7hntrJcwIbSNXmoTFwaQvG" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager" selected="Application.Minesweeper">
+    <configuration name="Minesweeper" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.sergenikov.minesweeper.Application" />
+      <module name="minesweeper.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="minesweeper [run]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Minesweeper" />
+      <item itemvalue="Gradle.minesweeper [run]" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e62c75d-2fc8-4931-90a9-85dd5df199f6" name="Default Changelist" comment="" />
+      <created>1579713979815</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579713979815</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="548" y="211" width="588" height="682" key="#Minesweeper" timestamp="1579715529634">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="548" y="211" width="588" height="682" key="#Minesweeper/0.28.1920.1052@0.28.1920.1052" timestamp="1579715529634" />
+    <state x="435" y="214" width="800" height="675" key="#Project_Structure" timestamp="1579714007616">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="435" y="214" width="800" height="675" key="#Project_Structure/0.28.1920.1052@0.28.1920.1052" timestamp="1579714007616" />
+    <state x="298" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579719377777">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="298" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1920.1052@0.28.1920.1052" timestamp="1579719377777" />
+    <state x="648" y="272" width="374" height="560" key="#com.intellij.ide.util.MemberChooser" timestamp="1579718678505">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="648" y="272" width="374" height="560" key="#com.intellij.ide.util.MemberChooser/0.28.1920.1052@0.28.1920.1052" timestamp="1579718678505" />
+    <state x="572" y="339" width="525" height="425" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1579715427411">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="572" y="339" width="525" height="425" key="#com.intellij.ide.util.TreeClassChooserDialog/0.28.1920.1052@0.28.1920.1052" timestamp="1579715427411" />
+    <state x="461" y="28" width="748" height="1050" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579726618702">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="461" y="28" width="748" height="1050" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.28.1920.1052@0.28.1920.1052" timestamp="1579726618702" />
+    <state width="922" height="318" key="GridCell.Tab.0.bottom" timestamp="1579721821390">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="922" height="318" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1579721821390" />
+    <state width="922" height="318" key="GridCell.Tab.0.center" timestamp="1579721821389">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="922" height="318" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1579721821389" />
+    <state width="922" height="318" key="GridCell.Tab.0.left" timestamp="1579721821388">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="922" height="318" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1579721821388" />
+    <state width="922" height="318" key="GridCell.Tab.0.right" timestamp="1579721821389">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="922" height="318" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1579721821389" />
+    <state width="1173" height="343" key="GridCell.Tab.1.bottom" timestamp="1579720605978">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1173" height="343" key="GridCell.Tab.1.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1579720605978" />
+    <state width="1173" height="343" key="GridCell.Tab.1.center" timestamp="1579720605977">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1173" height="343" key="GridCell.Tab.1.center/0.28.1920.1052@0.28.1920.1052" timestamp="1579720605977" />
+    <state width="1173" height="343" key="GridCell.Tab.1.left" timestamp="1579720605977">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1173" height="343" key="GridCell.Tab.1.left/0.28.1920.1052@0.28.1920.1052" timestamp="1579720605977" />
+    <state width="1173" height="343" key="GridCell.Tab.1.right" timestamp="1579720605978">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1173" height="343" key="GridCell.Tab.1.right/0.28.1920.1052@0.28.1920.1052" timestamp="1579720605978" />
+    <state x="290" y="257" key="SettingsEditor" timestamp="1579730381778">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="290" y="257" key="SettingsEditor/0.28.1920.1052@0.28.1920.1052" timestamp="1579730381778" />
+    <state x="504" y="254" key="run.anything.popup" timestamp="1579719259349">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="504" y="254" key="run.anything.popup/0.28.1920.1052@0.28.1920.1052" timestamp="1579719259349" />
+    <state x="503" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1579730447335">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="503" y="259" width="672" height="678" key="search.everywhere.popup/0.28.1920.1052@0.28.1920.1052" timestamp="1579730447335" />
+  </component>
+</project>
