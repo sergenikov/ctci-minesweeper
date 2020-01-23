@@ -5,13 +5,14 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Minesweeper {
 
   public static final char UNOPENED_CELL = '?';
-  private static final char OPEN_CELL = 'X';
+  public static final char OPENED_CELL = '+';
 
   private boolean[][] solutionGrid;
   private char[][] userGrid;
   private int numberOfMines;
   private int width;
   private int height;
+  private MineFinder mineFinder;
 
   public Minesweeper(int width, int height) {
     this.width = width;
@@ -21,6 +22,39 @@ public class Minesweeper {
     this.numberOfMines = this.initMines(Math.min(this.width, this.height));
     this.initGameGrid(this.userGrid);
     this.printGameGrid(this.userGrid, this.width, this.height);
+    this.mineFinder = new MineFinder(this.solutionGrid, this.userGrid);
+  }
+
+  public int getWidth() {
+    return width;
+  }
+
+  public int getHeight() {
+    return height;
+  }
+
+  public MineFinder getMineFinder() {
+    return this.mineFinder;
+  }
+
+  public int getNumberOfMines() {
+    return numberOfMines;
+  }
+
+  public boolean isMine(int x, int y) {
+    return this.solutionGrid[x][y];
+  }
+
+  public void printSolution() {
+    this.printSolution(this.solutionGrid, this.width, this.height);
+  }
+
+  public void printGameGrid() {
+    this.printGameGrid(this.userGrid, this.width, this.height);
+  }
+
+  public void setOpen(int x, int y) {
+    this.userGrid[x][y] = Minesweeper.OPENED_CELL;
   }
 
   /**
@@ -35,18 +69,6 @@ public class Minesweeper {
         userGrid[i][j] = Minesweeper.UNOPENED_CELL;
       }
     }
-  }
-
-  public int getNumberOfMines() {
-    return numberOfMines;
-  }
-
-  public boolean isMine(int x, int y) {
-    return this.solutionGrid[x][y];
-  }
-
-  public void printSolution() {
-    this.printSolution(this.solutionGrid, this.width, this.height);
   }
 
   /**
@@ -107,10 +129,6 @@ public class Minesweeper {
     System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<========>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
   }
 
-  public void printGameGrid() {
-    this.printGameGrid(this.userGrid, this.width, this.height);
-  }
-
   private void printGameGrid(final char[][] grid, int width, int height) {
 
     // pad the grid coordinates printout
@@ -139,9 +157,5 @@ public class Minesweeper {
 
       System.out.println();
     }
-  }
-
-  public void setOpen(int x, int y) {
-    this.userGrid[x][y] = Minesweeper.OPEN_CELL;
   }
 }

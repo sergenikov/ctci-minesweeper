@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Game {
 
-  private static final String DELIMITER = ",";
+  private static final String COORDINATES_DELIMITER = ",";
   private static final String CMD_EXIT = "exit";
   private static final String CMD_SOLUTION = "solution";
 
-  final Minesweeper minesweeper;
-  final Scanner scan;
+  private final Minesweeper minesweeper;
+  private final Scanner scan;
 
   public Game(Scanner scan) {
     this.minesweeper = new Minesweeper(10, 10);
@@ -20,7 +20,9 @@ public class Game {
 
     System.out.println(String.format("Mines: %d", this.minesweeper.getNumberOfMines()));
 
-    this.minesweeper.printSolution();
+    //    this.minesweeper.printSolution();
+
+    int x, y;
 
     // Game loop
     while (true) {
@@ -32,7 +34,7 @@ public class Game {
       // Process game control commands
       switch (userInput) {
         case CMD_EXIT:
-          System.out.println("Exit command invoked. Shutting down.");
+          System.out.println("Shutting down.");
           Application.close();
         case CMD_SOLUTION:
           this.minesweeper.printSolution();
@@ -40,21 +42,23 @@ public class Game {
           continue;
       }
 
-      final String[] split = userInput.split(DELIMITER);
+      String[] split = userInput.split(COORDINATES_DELIMITER);
 
-      int x = Integer.parseInt(split[0]);
-      int y = Integer.parseInt(split[1]);
+      x = Integer.parseInt(split[0]);
+      y = Integer.parseInt(split[1]);
 
       validateInput(x, y);
 
       if (this.minesweeper.isMine(x, y)) {
-        System.out.println("MINE!!!\n");
+        System.out.println("BOOM!!!\n");
         this.minesweeper.printSolution();
         System.out.println("Exiting...");
         Application.close();
       }
 
       this.minesweeper.setOpen(x, y);
+
+      this.minesweeper.getMineFinder().countMines(x, y);
 
       this.minesweeper.printGameGrid();
 
