@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 class MineFinder {
 
+  private final int OPEN_CELLS = 0;
+
   private final Queue<Pair<Integer, Integer>> queue;
   private final Set<Pair<Integer, Integer>> visitedSet;
   private final boolean[][] solutionGrid;
@@ -26,8 +28,11 @@ class MineFinder {
    *
    * @param x - x coordinate of the starting cell
    * @param y - y coordinate of the starting cell
+   * @return - list of opened cells without mines
    */
-  public void countMines(int x, int y) {
+  public List<Pair<Integer, Integer>> countMines(int x, int y) {
+
+    final List<Pair<Integer, Integer>> openCells = new ArrayList<>();
 
     final Pair<Integer, Integer> startingCell = new Pair<>(x, y);
 
@@ -44,32 +49,40 @@ class MineFinder {
       final List<Pair<Integer, Integer>> adjacentCells =
           this.generateValidAdjacentCells(currentCell.x, currentCell.y);
 
+      int adjacentBombs = this.countAdjacentBombs(adjacentCells);
+
+      if (adjacentBombs > 0) {
+        // current cell isn't going to be set to an empty value
+        // it will be one of 1,2,3..8
+        localBomb = true;
+        this.gameGrid[currentCell.x][currentCell.y] = (char) (adjacentBombs + '0');
+      }
+
       for (Pair<Integer, Integer> adjacentCell : adjacentCells) {
 
-        if (!this.visitedSet.contains(adjacentCell) && !this.isBomb(adjacentCell)) {
+        if (!this.visitedSet.contains(adjacentCell) && !localBomb) {
           this.visitedSet.add(adjacentCell);
           this.queue.add(adjacentCell);
-        }
-
-        // increase count in the current cell with the number of bombs
-        if (this.isBomb(adjacentCell)) {
-
-          localBomb = true;
-
-          char value = this.gameGrid[currentCell.x][currentCell.y];
-
-          if (this.isNumber(value)) {
-            this.gameGrid[currentCell.x][currentCell.y] = this.addOne(value);
-          } else {
-            this.gameGrid[currentCell.x][currentCell.y] = '1';
-          }
         }
       }
 
       if (!localBomb) {
         this.gameGrid[currentCell.x][currentCell.y] = Minesweeper.OPENED_CELL;
+        openCells.add(currentCell);
       }
     }
+
+    return openCells;
+  }
+
+  private int countAdjacentBombs(final List<Pair<Integer, Integer>> adjacentCells) {
+    int count = 0;
+    for (Pair<Integer, Integer> adjacentCell : adjacentCells) {
+      if (this.isBomb(adjacentCell)) {
+        count++;
+      }
+    }
+    return count;
   }
 
   /*
@@ -81,7 +94,7 @@ class MineFinder {
   }
 
   private boolean isNumber(char c) {
-    return (c != Minesweeper.UNOPENED_CELL);
+    return Character.isDigit(c);
   }
 
   private char addOne(char c) {

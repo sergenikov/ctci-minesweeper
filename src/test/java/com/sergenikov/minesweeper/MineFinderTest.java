@@ -3,6 +3,10 @@ package com.sergenikov.minesweeper;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+
 public class MineFinderTest {
 
   private MineFinder mineFinder;
@@ -32,7 +36,9 @@ public class MineFinderTest {
 
     this.mineFinder = new MineFinder(solutionGrid, gameGrid);
 
-    this.mineFinder.countMines(1, 1);
+    List<Pair<Integer, Integer>> pairs = this.mineFinder.countMines(0, 0);
+
+    assertEquals(1, pairs.size());
   }
 
   @Test
@@ -40,8 +46,8 @@ public class MineFinderTest {
 
     boolean[][] solutionGrid =
         new boolean[][] {
+          {false, true, false},
           {false, false, false},
-          {true, false, false},
           {false, false, false}
         };
 
@@ -57,9 +63,11 @@ public class MineFinderTest {
 
     this.mineFinder = new MineFinder(solutionGrid, gameGrid);
 
-    this.mineFinder.countMines(1, 1);
-
     GridPrinter.printGrid(gameGrid);
+
+    List<Pair<Integer, Integer>> pairs = this.mineFinder.countMines(0, 0);
+
+    assertEquals(1, pairs.size());
   }
 
   @Test
