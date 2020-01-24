@@ -30,9 +30,9 @@ class MineFinder {
    * @param y - y coordinate of the starting cell
    * @return - list of opened cells without mines
    */
-  public List<Pair<Integer, Integer>> countMines(int x, int y) {
+  public MoveInfo countMines(int x, int y) {
 
-    final List<Pair<Integer, Integer>> openCells = new ArrayList<>();
+    final MoveInfo moveInfo = new MoveInfo();
 
     final Pair<Integer, Integer> startingCell = new Pair<>(x, y);
 
@@ -42,8 +42,6 @@ class MineFinder {
 
     while (!this.queue.isEmpty()) {
 
-      boolean localBomb = false;
-
       Pair<Integer, Integer> currentCell = this.queue.poll();
 
       final List<Pair<Integer, Integer>> adjacentCells =
@@ -52,27 +50,29 @@ class MineFinder {
       int adjacentBombs = this.countAdjacentBombs(adjacentCells);
 
       if (adjacentBombs > 0) {
-        // current cell isn't going to be set to an empty value
-        // it will be one of 1,2,3..8
-        localBomb = true;
         this.gameGrid[currentCell.x][currentCell.y] = (char) (adjacentBombs + '0');
+        moveInfo.addCellWithMine(adjacentBombs, currentCell);
       }
 
       for (Pair<Integer, Integer> adjacentCell : adjacentCells) {
 
-        if (!this.visitedSet.contains(adjacentCell) && !localBomb) {
+        if (!this.visitedSet.contains(adjacentCell) && !this.isBombNearby(currentCell)) {
           this.visitedSet.add(adjacentCell);
           this.queue.add(adjacentCell);
         }
       }
 
-      if (!localBomb) {
+      if (!this.isBombNearby(currentCell)) {
         this.gameGrid[currentCell.x][currentCell.y] = Minesweeper.OPENED_CELL;
-        openCells.add(currentCell);
+        moveInfo.addOpened(currentCell);
       }
     }
 
-    return openCells;
+    return moveInfo;
+  }
+
+  private boolean isBombNearby(Pair<Integer, Integer> currentCell) {
+    return Character.isDigit(this.gameGrid[currentCell.x][currentCell.y]);
   }
 
   private int countAdjacentBombs(final List<Pair<Integer, Integer>> adjacentCells) {
@@ -85,22 +85,8 @@ class MineFinder {
     return count;
   }
 
-  /*
-  if current cell is not a bomb && adjacent cells aren't a bomb -> set current to 'X'
-   */
-
   private boolean isBomb(Pair<Integer, Integer> adjacentCell) {
     return this.solutionGrid[adjacentCell.x][adjacentCell.y];
-  }
-
-  private boolean isNumber(char c) {
-    return Character.isDigit(c);
-  }
-
-  private char addOne(char c) {
-    int charAsInt = Character.digit(c, 10);
-    charAsInt++;
-    return (char) (charAsInt + '0');
   }
 
   private List<Pair<Integer, Integer>> generateValidAdjacentCells(int x, int y) {

@@ -1,6 +1,5 @@
 package com.sergenikov.minesweeper;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -58,10 +57,6 @@ public class Game {
       }
 
       this.minesweeper.setOpen(x, y);
-
-      List<Pair<Integer, Integer>> result = this.minesweeper.getMineFinder().countMines(x, y);
-      result.forEach(v -> System.out.printf("%s ", v));
-      System.out.println();
 
       this.minesweeper.printGameGrid();
 
